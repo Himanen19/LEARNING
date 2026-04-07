@@ -7,8 +7,11 @@ public class Main {
     public static void main(String[] args) {
 
 // readUi();
-        inputThenPrintSumAndAverage();
+//        inputThenPrintSumAndAverage();
+        System.out.println(getBucketCount(2.75, 3.25, 2.5, 1));
+        System.out.println(getBucketCount(7.25, 4.3, 2.35));
     }
+
 
 public static void readUi(){
 
@@ -47,7 +50,7 @@ public static void readUi(){
 
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
-        long avg = 0;
+        long avg;
         int counter = 0;
         while (true) {
 
@@ -68,5 +71,37 @@ public static void readUi(){
 
 
     }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
+        if (width <= 0 || height <= 0 || extraBuckets <= 0 || areaPerBucket <= 0) {
+            return -1;
+        }
+        double wallArea = width * height;
+
+        return (int) Math.ceil((double) (wallArea - (extraBuckets * areaPerBucket)) / areaPerBucket);
+    }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket) {
+        if (width <= 0 || height <= 0 || areaPerBucket <= 0) {
+            return -1;
+        }
+        double wallArea = width * height;
+
+        return (int) Math.ceil((double) wallArea / areaPerBucket);
+
+    }
+
+    public static int getBucketCount(double area, double areaPerBucket) {
+        if (area <= 0 || areaPerBucket <= 0) {
+            return -1;
+        }
+
+        return (int) Math.ceil((double) area / areaPerBucket);
+
+    }
+
+
+
+
 }
 
