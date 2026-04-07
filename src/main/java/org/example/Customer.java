@@ -17,18 +17,18 @@ public class Customer {
         return emailAddress;
     }
 
-    public Customer(String name, double creditLimit, String emailAddress) {
-        this.name = name;
-        this.creditLimit = creditLimit;
-        this.emailAddress = emailAddress;
-    }
-
     public Customer() {
-        this("Gilson", 950.0, "gilson_ga@gmail.com");
+        this("Gilson", "gilson_ga@gmail.com");
     }
 
     public Customer(String name, String emailAddress) {
         this(name, 950.0, emailAddress);
 
+    }
+
+    public Customer(String name, double creditLimit, String emailAddress) {
+        this.name = name;
+        this.creditLimit = creditLimit;
+        this.emailAddress = emailAddress;
     }
 }

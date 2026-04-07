@@ -12,7 +12,7 @@ public class BankAccount {
         this.accountBalance = accountBalance;
         this.accountNumber = accountNumber;
         this.customerName = customerName;
-        this.Email = Email;
+        this.email = Email;
         this.phoneNumber = phoneNumber;
 
     }
@@ -68,11 +68,11 @@ public class BankAccount {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        email = email;
     }
 
     public String getPhoneNumber() {
