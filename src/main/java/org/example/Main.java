@@ -1,9 +1,6 @@
 package org.example;
 
 
-import java.security.PublicKey;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -15,23 +12,29 @@ public class Main {
 
 public static void readUi(){
 
-        Scanner scanner = new Scanner(System.in);
-        int total =0;
-        int count =0;
-       do {
-     try {
-        System.out.println("Enter Number #" + count);
-        total += Integer.parseInt(scanner.nextLine());
-        count++;
-    } catch (Exception e) {
-        System.out.println("type a valid imput");
+    Scanner myscanner = new Scanner(System.in);
+    double maxNumber = 0;
+    double minNumber = 0;
+    while (true) {
+
+        try {
+            System.out.println("Type a Number or a invalid character to quit");
+            double currentNumber = Double.parseDouble(myscanner.nextLine());
+            if (currentNumber > maxNumber) {
+                maxNumber = currentNumber;
+            }
+            if (currentNumber < minNumber) {
+                minNumber = currentNumber;
+            }
+        } catch (Exception e) {
+            System.out.println("Finishing the program:");
+
+            throw new RuntimeException(e);
+            break;
+        }
 
     }
-}while(count < 5);
-    System.out.println(total);
-
-
-
+    System.out.println("The max typed number is " + maxNumber + " and the min typed is " + minNumber);
 
 }
 }
