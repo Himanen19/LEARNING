@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
- readUi();
-
+// readUi();
+        inputThenPrintSumAndAverage();
     }
 
 public static void readUi(){
@@ -41,4 +41,32 @@ public static void readUi(){
     System.out.println("The max typed number is " + maxNumber + " and the min typed is " + minNumber);
 
 }
+
+    public static void inputThenPrintSumAndAverage() {
+
+
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        long avg = 0;
+        int counter = 0;
+        while (true) {
+
+            try {
+                System.out.println("type your numbers");
+                sum += Integer.parseInt(scanner.nextLine());
+                counter++;
+
+            } catch (NumberFormatException e) {
+
+
+                avg = Math.round((double) sum / counter);
+                System.out.println("SUM = " + sum + " AVG = " + avg);
+                break;
+            }
+
+        }
+
+
+    }
 }
+
