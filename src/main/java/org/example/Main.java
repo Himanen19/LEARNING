@@ -15,11 +15,17 @@ public static void readUi(){
     Scanner myscanner = new Scanner(System.in);
     double maxNumber = 0;
     double minNumber = 0;
+    boolean firstNumber = true;
     while (true) {
 
         try {
             System.out.println("Type a Number or a invalid character to quit");
             double currentNumber = Double.parseDouble(myscanner.nextLine());
+            if (firstNumber) {
+                maxNumber = currentNumber;
+                minNumber = currentNumber;
+                firstNumber = false;
+            }
             if (currentNumber > maxNumber) {
                 maxNumber = currentNumber;
             }
@@ -28,8 +34,6 @@ public static void readUi(){
             }
         } catch (Exception e) {
             System.out.println("Finishing the program:");
-
-            throw new RuntimeException(e);
             break;
         }
 
