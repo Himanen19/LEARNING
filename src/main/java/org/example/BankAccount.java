@@ -2,18 +2,38 @@ package org.example;
 
 public class BankAccount {
 
-    int accountNumber;
-    int accountBalance;
-    String customerName;
-    String Email;
-    String phoneNumber;
+    private int accountNumber;
+    private double accountBalance;
+    private String customerName;
+    private String email;
+    private String phoneNumber;
 
-    public void depositFunds(int value) {
+    public BankAccount(int accountNumber, double accountBalance, String customerName, String Email, String phoneNumber) {
+        this.accountBalance = accountBalance;
+        this.accountNumber = accountNumber;
+        this.customerName = customerName;
+        this.Email = Email;
+        this.phoneNumber = phoneNumber;
+
+    }
+
+    public BankAccount(double accountBalance, String email, String phoneNumber) {
+        this.accountBalance = accountBalance;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public BankAccount() {
+
+
+    }
+
+    public void depositFunds(double value) {
         accountBalance += value;
         System.out.print("Your current balance is" + accountBalance);
     }
 
-    public void withdrawFunds(int value) {
+    public void withdrawFunds(double value) {
 
         if (accountBalance - value > 0) {
             accountBalance -= value;
@@ -31,11 +51,11 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public int getAccountBalance() {
+    public double getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(int accountBalance) {
+    public void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;
     }
 
