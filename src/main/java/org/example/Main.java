@@ -4,48 +4,34 @@ package org.example;
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-           System.out.println(getEvenDigitSum(2000));
+ readUi();
+
     }
 
+public static void readUi(){
 
-    public static boolean isPalindrome (int number) {
-        int reverse = 0;
-        int xnumber = number;
-        while (reverse < number) {
-            if(xnumber == 10 ) {
-              return false;
-            }
-            else { reverse += xnumber % 10;
-            }
-            xnumber = xnumber / 10;
-            if(reverse < number) {
-                reverse *= 10;
-            }
+        Scanner scanner = new Scanner(System.in);
+        int total =0;
+        int count =0;
+       do {
+     try {
+        System.out.println("Enter Number #" + count);
+        total += Integer.parseInt(scanner.nextLine());
+        count++;
+    } catch (Exception e) {
+        System.out.println("type a valid imput");
 
-        }
-
-return reverse == number ;
     }
- public static int getEvenDigitSum(int number) {
+}while(count < 5);
+    System.out.println(total);
 
-        if(number < 0) {
-            return -1;
-        }
-        int lastDigit = number;
-         int total = 0;
-        while(lastDigit > 0) {
-            int lastD = lastDigit % 10;
-            if(lastD % 2 == 0) {
-            total += lastD; }
-            lastDigit /= 10;
-        }
-        return total;
- }
+
+
 
 }
-
-
+}

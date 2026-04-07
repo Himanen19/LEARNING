@@ -11,7 +11,7 @@ public class FirstClass {
         System.out.print("hello world");
         double um = 20.0d, dois = 80.00d ;
         double result = ((um+dois)*100 ) % 40.00;
-        boolean f = result == 0.00 ? true : false;
+        boolean f = result == 0.00;
         System.out.print(f);
         System.out.print(!f ? "got some remainder" : "dont get it") ;
 
