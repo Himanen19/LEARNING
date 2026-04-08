@@ -1,26 +1,9 @@
 package org.example;
 
-public class SalariedEmployee extends Employee {
+public class SalariedEmployee {
 
-
-    private double annualSalary;
-    private boolean isRetired;
-
-    public SalariedEmployee() {
-
+    public SalariedEmployee(String joe, String s, String s1, int i) {
     }
 
-    public SalariedEmployee(String name, String birthDate, String hireDate, double annualSalary) {
-        super("john", "today", "01/01/2020");
-        this.annualSalary = annualSalary;
-    }
 
-    public void retire() {
-        this.isRetired = true;
-    }
-
-    @Override
-    public double collectPay() {
-        return annualSalary / 26;
-    }
 }
