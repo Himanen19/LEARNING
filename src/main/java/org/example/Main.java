@@ -1,17 +1,30 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        Printer hp = new Printer(true, 300);
-        hp.printPages(31);
 
-        System.out.println(hp);
-        System.out.println(hp.getPagesPrinted());
+        Scanner x = new Scanner(System.in);
+        while (true) {
+            System.out.println("Type the movie name: ");
+            String movieName = x.nextLine();
+
+            System.out.println("Type the movie TYPE: ");
+            String type = x.nextLine();
+            if ("QqeE".contains(type)) {
+                break;
+            }
+
+
+            Movie movie = Movie.getMovie(type, movieName);
+            movie.watchMovie();
+
+        }
+
 
     }
-
-
-}
+    }
 
 
