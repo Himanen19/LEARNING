@@ -11,12 +11,12 @@ public class Main {
 ////       myBurger.makeBurger("Chedder Supreme", true, true, false);
 //
 ////       myBurger.deluxeBurger(true, true);
+        int n = 1345;
+        while (n % 10 == 0) {
+            n = n / 10;
+            System.out.println(n);
+        }
 
-
-        Item coke = new Item(2, "drink", "Coca-Cola");
-        coke.setSize("small");
-
-        coke.printItem();
 
     }
 

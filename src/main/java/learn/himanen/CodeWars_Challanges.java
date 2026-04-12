@@ -122,10 +122,72 @@ class Kata3 {
     }
 }
 
-public class Kata4 {
+class Kata4 {
+
+    public static String solution(String str) {
+        char[] c = str.toCharArray();
+        StringBuilder x = new StringBuilder();
+        for (int i = c.length - 1; i > 0; i--) {
+
+            x.append(c[i]);
+        }
+
+        return x.toString();
+    }
+
+}
+
+class NoBxoring {
+    public static int noBoringZeros(int n) {
+        while (n % 10 == 0) {
+            n = n / 10;
+        }
+        return n;
+    }
+
+}
+
+class Kata5 {
+
 
     public static String solution(String str) {
 
+        char[] c = str.toCharArray();
+        StringBuilder finalString = new StringBuilder();
+        for (int i = c.length - 1; i >= 0; i--) {
+            finalString.append(c[i]);
+
+        }
+
+        return finalString.toString();
+        // descobri que da pra inicializar stringbuilder ja com a string dentro facilitando a reversao para return new StringBuilder(str).reverse().toString();
     }
 
+}
+
+class Drinks2 {
+
+    public static String peopleWithAgeDrink(int age) {
+
+        return age < 14 ? "drink toddy" : age < 18 ? "drink coke" : age < 20 ? "drink beer" : "drink whiskey";
+
+    }
+}
+
+class CountDig {
+    //    melhorando meu StringBuilder....;
+    public static int nbDig(int n, int d) {
+        // your code
+        StringBuilder string = new StringBuilder();
+        int counter = 0;
+        for (int i = 0; i <= n; i++) {
+            string.append(i * i);
+        }
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == '0' + d) {
+                counter++;
+            }
+        }
+        return counter;
+    }
 }
