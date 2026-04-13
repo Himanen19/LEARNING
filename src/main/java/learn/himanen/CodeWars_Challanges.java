@@ -191,3 +191,48 @@ class CountDig {
         return counter;
     }
 }
+
+class Fighter {
+    public String name;
+    public int health, damagePerAttack;
+
+    public Fighter(String name, int health, int damagePerAttack) {
+        this.name = name;
+        this.health = health;
+        this.damagePerAttack = damagePerAttack;
+    }
+}
+
+class Kata67 {
+    public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
+        // Your code goes here. Have fun!
+        boolean dead = fighter1.health <= 0 || fighter2.health <= 0;
+        String currentTurn = firstAttacker;
+        if (dead) {
+
+            return fighter1.health <= 0 ? fighter2.name : fighter1.name;
+        }
+        while (!dead) {
+            if (currentTurn.equals(fighter1.name)) {
+                fighter2.health -= fighter1.damagePerAttack;
+
+            } else {
+                fighter1.health -= fighter2.damagePerAttack;
+
+            }
+            dead = fighter1.health <= 0 || fighter2.health <= 0;
+            currentTurn = currentTurn == fighter1.name ? fighter2.name : fighter1.name;
+
+        }
+        return fighter1.health <= 0 ? fighter2.name : fighter1.name;
+    }
+}
+
+//    public static int[] descendingOrder(int[] array) {
+//
+/// /      int[] randomArr =  Arrays.fill((int) Math.random());
+/// /
+/// /        return Arrays.sort(array);
+//        return [1];
+//    }
+//}
