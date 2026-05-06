@@ -1,6 +1,6 @@
 package learn.himanen;
 
-public class Animal {
+public abstract class Animal {
 
     private String type;
     private String size;
@@ -16,11 +16,13 @@ public class Animal {
         this.type = type;
     }
 
-
+    //
+//
     public String getSize() {
         return size;
     }
 
+    //
     public void setSize(String size) {
         this.size = size;
     }

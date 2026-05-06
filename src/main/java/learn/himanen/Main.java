@@ -7,6 +7,9 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         Menu.m();
+        ArrayList<Animal> animals = new ArrayList<>();
+        Dog dog = new Dog();
+        animals.add(dog);
 
     }
 
